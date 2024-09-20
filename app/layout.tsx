@@ -1,17 +1,17 @@
-import type { Metadata } from "next";
-import "@/styles/globals.scss";
-import { ThemeProvider } from "@/config/material-tailwind-theme-provider";
-import Header from "@/components/Header/page";
-import Footer from "@/components/Footer/page";
-import StartLoading from "@/components/StartLoading/page";
+import type { Metadata } from 'next';
+import '@/styles/globals.scss';
+import { ThemeProvider } from '@/config/material-tailwind-theme-provider';
+import Header from '@/components/Header/page';
+import Footer from '@/components/Footer/page';
+import StartLoading from '@/components/StartLoading/page';
 
 export const metadata: Metadata = {
-  title: "NEW AGE KIM SO YEON",
-  description: "NEW AGE KIM SO YEON",
+  title: 'NEW AGE KIM SO YEON',
+  description: 'NEW AGE KIM SO YEON'
 };
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
@@ -22,7 +22,6 @@ export default function RootLayout({
           <StartLoading>
             <Header />
             {children}
-            <Footer />
           </StartLoading>
         </body>
       </html>
