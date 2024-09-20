@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import '_fonts.scss';
+
+/*
+  START :: RESET
+  http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  letter-spacing: -0.04em;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: auto;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+section {
+  display: block;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.blind {
+  display: none;
+}
+/* END :: RESET */
+
+/*custom*/
+
+.startLoading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: #282c34;
+}
+
+.rollerText {
+  .roller {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    animation: move 4s infinite;
+    .text {
+      position: relative;
+      top: 80px;
+      color: #fff;
+      animation: white-out 5s infinite;
+    }
+  }
+  .closure {
+    &:after {
+      content: '';
+      position: absolute;
+      height: 30vh;
+      width: 30%;
+      background: #282c34;
+      transform: translate(-90%, -100%);
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      height: 30vh;
+      width: 30%;
+      background: #282c34;
+      transform: translate(-90%, 20%);
+    }
+  }
+
+  @keyframes move {
+    25% {
+      transform: translatey(5vmin);
+      opacity: 1;
+    }
+    50% {
+      transform: translatey(-5vmin);
+    }
+    75% {
+      transform: translatey(-12vmin);
+    }
+  }
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /*background: repeating-linear-gradient(40.22deg, #000000 0%, #111111 39.95%, #025ae6 100%);
+  background-blend-mode: overlay, difference, difference, exclusion, normal;*/
+}
+
+.menu-burger {
+  width: 100%;
+  &::after,
+  &::before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 40%;
+    margin: auto;
+    background-color: white;
+    position: relative;
+    transition: transform 0.3s;
+  }
+
+  &::after {
+    top: -5px;
+  }
+
+  &:before {
+    top: 5px;
+  }
+
+  &.active {
+    &::after {
+      transform: rotate(45deg);
+      top: -1px;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+
+      top: 0;
+    }
+  }
+}
