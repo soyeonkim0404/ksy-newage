@@ -2,6 +2,38 @@
 import Card from '@/components/Card/page';
 import styled, { keyframes } from 'styled-components';
 import { useEffect, useState } from 'react';
+import SeoulSemicon from '@/public/images/seoulsemicon.png';
+
+const data = [
+  {
+    title: 'supabase 활용 스터디',
+    thumb: '',
+    description: [
+      'supabase를 이용한 todolist',
+      'supabase를 이용한 api 불러오기',
+      'supabase의 realtime을 이용한 실시간 채팅 & 로그인'
+    ],
+    flag: ['study'],
+    url: '/project/detail/supabase',
+    projectYear: '2024'
+  },
+  {
+    title: '서울반도체',
+    thumb: SeoulSemicon,
+    description: ['다국어 웹사이트', 'next.js 14, app router'],
+    flag: ['프로젝트', '구축'],
+    url: '/project/detail/seoulsemicon',
+    projectYear: '2024'
+  },
+  {
+    title: 'OCI, OCI Holdings 사이트 연간 운영',
+    thumb: '',
+    description: ['next.js 13'],
+    flag: ['프로젝트', '운영'],
+    url: 'https://www.oci.co.kr/',
+    projectYear: '2025'
+  }
+];
 
 const rollOutAnimation = keyframes`
     0% {
@@ -52,34 +84,6 @@ const Word = styled.div`
 
 const rollingText = ['Work', 'Career', 'Study', 'Micro Project'];
 
-const data = [
-  {
-    title: 'supabase 활용 스터디',
-    thumb: '',
-    description: [
-      'supabase를 이용한 todolist',
-      'supabase를 이용한 api 불러오기',
-      'supabase의 realtime을 이용한 실시간 채팅 & 로그인'
-    ],
-    flag: ['study'],
-    url: ''
-  },
-  {
-    title: '서울반도체',
-    thumb: '',
-    description: ['다국어 웹사이트', 'next.js 14, app router'],
-    flag: ['프로젝트', '구축'],
-    url: 'https://www.seoulsemicon.com/'
-  },
-  {
-    title: 'OCI, OCI Holdings 사이트 연간 운영',
-    thumb: '',
-    description: ['next.js 13'],
-    flag: ['프로젝트', '운영'],
-    url: 'https://www.oci.co.kr/'
-  }
-];
-
 export default function Project() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [prevWordIndex, setPrevWordIndex] = useState<number | null>(null);
@@ -106,8 +110,8 @@ export default function Project() {
           <Word key={currentWordIndex}>{rollingText[currentWordIndex]}</Word>
         </WordWrapper>
       </Sentence>
-      <div className="grid gap-4 mt-[100px]">
-        <Card />
+      <div className="grid gap-6 mt-[100px] lg:grid-cols-4 md:grid-cols-3 grid-cols-2">
+        <Card data={data} />
       </div>
     </div>
   );

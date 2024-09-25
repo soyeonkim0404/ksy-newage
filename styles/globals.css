@@ -243,8 +243,36 @@ a {
   position: relative;
   width: 100%;
   height: 100vh;
-  /*background: repeating-linear-gradient(40.22deg, #000000 0%, #111111 39.95%, #025ae6 100%);
-  background-blend-mode: overlay, difference, difference, exclusion, normal;*/
+}
+
+.myPortfolio {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.myPortfolio .inner {
+  width: 100%;
+  height: calc(100vh - 40px);
+  border-radius: 20px;
+  background-image: radial-gradient(circle 369px at -2.9% 12.9%, rgb(247, 234, 163) 0%, rgba(236, 180, 238, 0.56) 46.4%, rgb(163, 203, 247) 100.7%);
+}
+.myPortfolio .inner .contents {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 20px 20px 20px 0;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+}
+.myPortfolio .inner .contents .right-area {
+  overflow-y: auto;
+  width: calc(100% - 340px);
+  height: calc(100vh - 80px);
+  margin-left: 320px;
 }
 
 .menu-burger {
@@ -273,6 +301,21 @@ a {
 .menu-burger.active::before {
   transform: rotate(-45deg);
   top: 0;
+}
+
+.home .home-card {
+  position: relative;
+}
+.home .home-card::after {
+  content: "Next.js";
+  display: block;
+  position: absolute;
+  bottom: -39px;
+  right: -35px;
+  font-size: 100px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.2);
+  z-index: -1;
 }
 
 /*# sourceMappingURL=globals.css.map */
