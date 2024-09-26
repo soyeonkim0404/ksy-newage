@@ -1,6 +1,5 @@
-'use client';
-
 import Link from 'next/link';
+import Weather from '@/components/Weather/page';
 
 export default function Main() {
   return (
@@ -69,7 +68,9 @@ export default function Main() {
         </div>
         <div className="flex-shrink-0 w-[540px]">
           {/*기상 api*/}
-          <div></div>
+          <div>
+            <Weather />
+          </div>
           {/*애니메이션*/}
           <div></div>
           {/*캘린더 api*/}
